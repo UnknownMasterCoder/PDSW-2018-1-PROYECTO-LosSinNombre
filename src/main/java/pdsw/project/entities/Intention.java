@@ -26,11 +26,8 @@ public class Intention implements Serializable{
     private String palabrasClave;
     private ArrayList<Comment> comments;
     private String area;
-    //private String area;
-    
-    
-    //TO-DO, Correct variables and methods
-    
+           
+    //TO-DO, Correct variables and methods    
 
     public Intention(int id, int estado, String nombre, String descripcion, Date fechaCreacion,ArrayList<Comment> comentarios,String palabrasClave, User autor,String area) {
         this.id = id;
