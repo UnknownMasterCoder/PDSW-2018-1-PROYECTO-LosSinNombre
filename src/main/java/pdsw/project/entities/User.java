@@ -13,6 +13,9 @@ public class User {
         this.intencion = intencion;
     }
 
+    public User() {
+    }        
+
     public String getFull_name() {
         return full_name;
     }

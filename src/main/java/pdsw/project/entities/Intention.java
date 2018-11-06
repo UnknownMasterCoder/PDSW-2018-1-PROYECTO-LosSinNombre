@@ -38,8 +38,7 @@ public class Intention implements Serializable{
         this.palabrasClave = palabrasClave;
         this.comments = comentarios;
         this.autor = autor;
-        this.area = area;
-        
+        this.area = area;        
     }
 
     public Intention(int id2, int estado2, String nombre2, String descripcion2, Date now,
@@ -57,6 +56,10 @@ public class Intention implements Serializable{
 	public int getId() {
         return id;
     }
+
+    public Intention() {
+    }
+    
 
     public void setId(int id) {
         this.id = id;

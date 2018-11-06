@@ -1,20 +1,21 @@
 package pdsw.project.entities;
 
-public class Comment {
+public class Vote {
     private int id;
-    private String content;
+    private boolean like_dislike;
     private User usuario;
     private Intention intencion;
 
-    public Comment(String content, User usuario, Intention intencion) {
-        this.content = content;
+    public Vote(int id, boolean like_dislike, User usuario, Intention intencion) {
+        this.id = id;
+        this.like_dislike = like_dislike;
         this.usuario = usuario;
         this.intencion = intencion;
     }
 
-    public Comment() {
-    }    
-    
+    public Vote() {
+    }        
+
     public int getId() {
         return id;
     }
@@ -23,12 +24,12 @@ public class Comment {
         this.id = id;
     }
 
-    public String getContent() {
-        return content;
+    public boolean isLike_dislike() {
+        return like_dislike;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setLike_dislike(boolean like_dislike) {
+        this.like_dislike = like_dislike;
     }
 
     public User getUsuario() {
