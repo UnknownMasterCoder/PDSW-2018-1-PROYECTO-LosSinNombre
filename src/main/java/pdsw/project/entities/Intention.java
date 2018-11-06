@@ -23,28 +23,30 @@ public class Intention implements Serializable{
     private Date fechaCreacion;
     private String tags;
     private User autor;
+    private String palabrasClave;
     private ArrayList<Comment> comments;
+    private String area;
     //private String area;
     
     
     //TO-DO, Correct variables and methods
     
 
-    public Intention(int id, int estado, String nombre, String descripcion, Date fechaCreacion,ArrayList<Comentario>comentarios,String palabrasClave,Usuario autor,String area) {
+    public Intention(int id, int estado, String nombre, String descripcion, Date fechaCreacion,ArrayList<Comment> comentarios,String palabrasClave, User autor,String area) {
         this.id = id;
         this.estado = estado;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fechaCreacion = fechaCreacion;
         this.palabrasClave = palabrasClave;
-        this.comentarios = comentarios;
+        this.comments = comentarios;
         this.autor = autor;
         this.area = area;
         
     }
 
     public Intention(int id2, int estado2, String nombre2, String descripcion2, Date now,
-			String palabrasClave2, Usuario usuario,String area) {
+			String palabrasClave2, User usuario,String area) {
     	this.id = id2;
         this.estado = estado2;
         this.nombre = nombre2;
@@ -74,11 +76,11 @@ public class Intention implements Serializable{
     }
     
 
-    public Usuario getUsuario_documento() {
+    public User getUsuario_documento() {
         return autor;
     }
 
-    public void setUsuario_documento(Usuario autor) {
+    public void setUsuario_documento(User autor) {
         this.autor = autor;
     }
     
@@ -117,11 +119,11 @@ public class Intention implements Serializable{
     }
     
     
-    public ArrayList<Comentario> getComentarios(){
-    	return comentarios;
+    public ArrayList<Comment> getComentarios(){
+    	return comments;
     }
-    public void setComentarios(ArrayList<Comentario> comentarios) {
-    	this.comentarios = comentarios;
+    public void setComentarios(ArrayList<Comment> comentarios) {
+    	this.comments = comentarios;
     }
     
     public String getArea() {
