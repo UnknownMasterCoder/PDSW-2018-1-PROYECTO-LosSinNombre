@@ -1,0 +1,11 @@
+pdsw\project\dao\IntentionDAO.class
+pdsw\project\services\InitiativeBankServices.class
+pdsw\project\entities\Intention.class
+pdsw\project\services\impl\InitiativeBankServicesImpl.class
+pdsw\project\services\InitiativeBankException.class
+pdsw\project\entities\Comment.class
+pdsw\project\entities\User.class
+pdsw\project\bean\UserIntentionBean.class
+pdsw\project\entities\Vote.class
+pdsw\project\dao\mybatis\mappers\IntentionMapper.class
+pdsw\project\dao\mybatis\MyBatisIntentionDAO.class
