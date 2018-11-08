@@ -23,11 +23,12 @@ and open the template in the editor.
     <center><img src="img/login.png" alt="Log Icon" /></center>
     
     <FONT size="5px" COLOR="white"><center><h:outputLabel for="mail" value="Mail:" /></center></FONT>
-    <center><p:inputText id="mail" value="#{LoginBean.mail}" required="true" label="mail" /></center>
+    <center><p:inputText id="mail" value="#{loginBean.mail}" required="true" label="mail" /></center>
         
     <FONT size="5px" COLOR="white"><center><h:outputLabel for="password" value="Password:" /></center></FONT>
-    <center><p:password id="password" value="#{LoginBean.contrasenia}" required="true" label="password" /></center>
-    <p:button outcome="menuPrincipal?mail=#{loginBean.comprobacion()}" value="Ingresar" />
+    <center><p:password id="password" value="#{loginBean.contrasenia}" required="true" label="password" /></center>
+    <br></br>
+    <center><p:button outcome="menuPrincipal?mail=#{LoginBean.mail}" value="Ingresar" /></center>
 </body>
     
 </html>
