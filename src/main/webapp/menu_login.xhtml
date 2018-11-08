@@ -27,8 +27,7 @@ and open the template in the editor.
         
     <FONT size="5px" COLOR="white"><center><h:outputLabel for="password" value="Password:" /></center></FONT>
     <center><p:password id="password" value="#{LoginBean.contrasenia}" required="true" label="password" /></center>
-        
-        
+    <p:button outcome="menuPrincipal?mail=#{loginBean.comprobacion()}" value="Ingresar" />
 </body>
     
 </html>

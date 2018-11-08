@@ -23,13 +23,20 @@ public class LoginBean extends BasePageBean{
        	private String mail;
 
 
-        private static final long serialVersionUID = 35L;
+        private 
+        static final long serialVersionUID = 35L;
 
         @Inject
 	private InitiativeBankServices initiativeBankServices;
 
         
+    public LoginBean(){
         
+    }    
+        
+    public String comprobacion(){
+        return mail;
+    }    
         
     //establecer y retornar la contraseña dada en el login   
     public void setContrasenia(String contrasenia){
