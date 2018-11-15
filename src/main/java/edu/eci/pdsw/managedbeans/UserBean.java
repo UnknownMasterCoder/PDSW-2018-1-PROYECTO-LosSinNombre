@@ -1,21 +1,19 @@
 package edu.eci.pdsw.managedbeans;
 
+import edu.eci.pdsw.services.InitiativeBankException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 
 import edu.eci.pdsw.services.InitiativeBankServices;
-import javax.faces.bean.ManagedProperty;
 
 @SuppressWarnings("deprecation")
 @SessionScoped
 @ManagedBean(name = "userBean")
 
-public class UserBean extends BasePageBean {
-	
+public class UserBean extends BasePageBean {	
     
     private String mail;
-
     private String password;
     
     @Inject
@@ -23,7 +21,7 @@ public class UserBean extends BasePageBean {
 
     public UserBean() {
     }
-
+    
     public String getMail() {
         return mail;
     }

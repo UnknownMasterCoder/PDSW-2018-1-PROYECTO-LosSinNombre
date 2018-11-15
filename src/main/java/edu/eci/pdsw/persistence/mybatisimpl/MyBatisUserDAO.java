@@ -1,7 +1,5 @@
 package edu.eci.pdsw.persistence.mybatisimpl;
 
-import java.util.List;
-
 import org.apache.ibatis.exceptions.PersistenceException;
 
 import com.google.inject.Inject;

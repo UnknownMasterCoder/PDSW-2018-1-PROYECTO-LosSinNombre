@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pdsw.project.bean;
+package edu.eci.pdsw.managedbeans;
 
 /**
  *
  * @author 2099190
  */
-public class UserIntentionBean {
+public class IntentionBean {
     
 }
