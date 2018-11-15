@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="edu.eci.pdsw.persistence.mybatisimpl.mappers.UserMapper">
+
+    <resultMap type='User' id='UserResult'>             
+        <result property='full_name' column='full_name'/>
+        <result property='email' column='email'/>
+        <result property='areaDepartment' column='deparment_area'/>
+        
+        <result property="contrasenia" column="pass"/>
+    </resultMap>
+
+    <select id='consultarUsuario' parameterType='map' resultMap='UserResult'>
+        SELECT
+            u.email as useremail,
+            u.full_name as full_name,
+            u.deparment_area as areaDepartment,
+            u.pass as contrasenia
+        FROM usuario AS u
+        WHERE u.email = #{mail}
+    </select>
+    
+    <delete id="deleteAll">
+        delete from usuario
+    </delete>
+</mapper>
