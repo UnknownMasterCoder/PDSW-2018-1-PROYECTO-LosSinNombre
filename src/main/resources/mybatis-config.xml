@@ -3,19 +3,15 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!--<settings>
-        <setting name="logImpl" value="LOG4J"/>        
-    </settings>-->
-    
     <properties resource="config.properties">
     </properties>
+
     <typeAliases>
-        <typeAlias type="edu.eci.pdsw.samples.entities.Usuario" alias="Usuario"/>
-        <typeAlias type="edu.eci.pdsw.samples.entities.Comentario" alias="Comentario"/>
-        <typeAlias type="edu.eci.pdsw.samples.entities.Interes" alias="Interes"/>
-        <typeAlias type="edu.eci.pdsw.samples.entities.Iniciativa" alias="Iniciativa"/>
+        <typeAlias type='edu.eci.pdsw.entities.User' alias='User'/>
+        <typeAlias type='edu.eci.pdsw.entities.Comment' alias='Comment'/>
+        <typeAlias type='edu.eci.pdsw.entities.Intention' alias='Intention'/>
     </typeAliases>
-    
+
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC" />
@@ -24,15 +20,13 @@
                 <property name="url" value="${url}"/>
                 <property name="username" value="${username}" />
                 <property name="password" value="${password}" />
-
             </dataSource>
         </environment>
     </environments>
-        
+
     <mappers>
-        <mapper resource="mappers/UsuarioMapper.xml"></mapper>
-        <mapper resource="mappers/IniciativaMapper.xml"></mapper>
-        <mapper resource="mappers/ComentarioMapper.xml"></mapper>
+        <mapper resource="mappers/UserMapper.xml"></mapper>
+        <mapper resource="mappers/IntentionMapper.xml"></mapper>          
     </mappers> 
         
         

@@ -1,25 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-
-
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-                     
-<mapper namespace="edu.eci.pdsw.project.dao.mybatis.mappers.UserMapper">
-    
-    <resultMap type='User' id='UserResult'>
-        <id property='mail' column='useremail'/>        
-        <result property='fullname' column='fullname'/>
-        <result property='areaDepartment' column='userArea'/>
-        <result property='pass' column='password'/>
+  
+<mapper namespace="edu.eci.pdsw.persistence.mybatisimpl.mappers.UserMapper">
+
+    <resultMap type='User' id='UserResult'>             
+        <result property='full_name' column='full_name'/>
+        <result property='email' column='useremail'/>
+        <result property='areaDepartment' column='areaDepartment'/>
+        
+        <result property="contrasenia" column="contrasenia"/>
     </resultMap>
-    
+
     <select id='consultarUsuario' parameterType='map' resultMap='UserResult'>
         SELECT
             u.email as useremail,
@@ -30,6 +23,7 @@ and open the template in the editor.
         WHERE u.email = #{mail}
     </select>
     
-
-
+    <delete id="deleteAll">
+        delete from usuario
+    </delete>
 </mapper>
