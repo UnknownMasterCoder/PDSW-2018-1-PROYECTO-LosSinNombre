@@ -1,14 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.eci.pdsw.managedbeans;
 
-/**
- *
- * @author 2099190
- */
-public class IntentionBean {
+import com.google.inject.Inject;
+import edu.eci.pdsw.entities.Intention;
+import edu.eci.pdsw.services.InitiativeBankServices;
+import java.util.List;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+@SessionScoped
+@ManagedBean(name = "intentionBean")
+
+public class IntentionBean extends BasePageBean{
     
+    @Inject
+    private InitiativeBankServices initiativeBankServices;
+
+    public IntentionBean() {
+        
+    }       
+    
+    public List<Intention> consult() throws Exception{
+        try {
+            return initiativeBankServices.consultaIntencion();
+        } catch (Exception e) {
+            throw e;
+        }
+    }
 }

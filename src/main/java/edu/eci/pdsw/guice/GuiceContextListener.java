@@ -9,8 +9,10 @@ import org.mybatis.guice.datasource.helper.JdbcHelper;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import edu.eci.pdsw.persistence.IntentionDAO;
 
 import edu.eci.pdsw.persistence.UserDAO;
+import edu.eci.pdsw.persistence.mybatisimpl.MyBatisIntentionDAO;
 import edu.eci.pdsw.persistence.mybatisimpl.MyBatisUserDAO;
 import edu.eci.pdsw.services.InitiativeBankServices;
 import edu.eci.pdsw.services.impl.InitiativeBankServicesImpl;
@@ -34,7 +36,8 @@ public class GuiceContextListener implements ServletContextListener {
                     setClassPathResource("mybatis-config.xml");
                     // User
                     bind(InitiativeBankServices.class).to(InitiativeBankServicesImpl.class);
-                    bind(UserDAO.class).to(MyBatisUserDAO.class);                                   
+                    bind(UserDAO.class).to(MyBatisUserDAO.class);
+                    bind(IntentionDAO.class).to(MyBatisIntentionDAO.class);
                 }
             });
 

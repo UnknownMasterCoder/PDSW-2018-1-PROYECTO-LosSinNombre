@@ -57,4 +57,8 @@ public class User {
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
+    
+    public String toString() {
+        return "Nombre: " + full_name + ", Correo: " + email + ", Contraseña: " +  contrasenia;
+    }
 }

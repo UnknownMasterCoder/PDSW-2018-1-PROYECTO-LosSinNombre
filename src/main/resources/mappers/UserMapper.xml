@@ -7,10 +7,10 @@
 
     <resultMap type='User' id='UserResult'>             
         <result property='full_name' column='full_name'/>
-        <result property='email' column='email'/>
-        <result property='areaDepartment' column='deparment_area'/>
+        <result property='email' column='useremail'/>
+        <result property='areaDepartment' column='areaDepartment'/>
         
-        <result property="contrasenia" column="pass"/>
+        <result property="contrasenia" column="contrasenia"/>
     </resultMap>
 
     <select id='consultarUsuario' parameterType='map' resultMap='UserResult'>

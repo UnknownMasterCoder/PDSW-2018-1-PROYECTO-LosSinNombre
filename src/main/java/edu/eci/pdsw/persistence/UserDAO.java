@@ -4,6 +4,6 @@ import edu.eci.pdsw.entities.User;
 
 public interface UserDAO {
 	
-    public User consulta(String mail) throws PersistenceException;
+    public User consultaUser(String mail) throws PersistenceException;
 	
 }

@@ -15,13 +15,12 @@ public class MyBatisUserDAO implements UserDAO {
 	UserMapper userMapper;
 	
 	@Override
-	public User consulta(String mail) throws PersistenceException{
+	public User consultaUser(String mail) throws PersistenceException{
             try {
-                return userMapper.consultaUser(mail);
+                return userMapper.consultarUsuario(mail);
             } catch (Exception e) {
                 throw new PersistenceException("No existe ningun usuario con el correo: " + mail, e);
             }
         }
-	
 
 }

@@ -25,7 +25,8 @@
     </environments>
 
     <mappers>
-        <mapper resource="mappers/UserMapper.xml"></mapper>            
+        <mapper resource="mappers/UserMapper.xml"></mapper>
+        <mapper resource="mappers/IntentionMapper.xml"></mapper>          
     </mappers> 
         
         

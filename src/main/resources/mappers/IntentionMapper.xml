@@ -7,9 +7,6 @@
 <mapper namespace="pdsw.project.dao.mybatis.mappers.IntentionMapper">
     
     <resultMap type='Intention' id='IntentionResult'>
-        
-        <!-- TODO ALL -->
-        
         <id property='id' column='id'/>        
         <result property='estado' column='estados_idEstado'/>
         <result property='nombre' column='nombre'/>
@@ -20,6 +17,11 @@
         <collection property="palabrasClave" ofType="java.lang.String"></collection>        
         <collection property="comentarios" ofType="Comentario" resultMap="pdsw.project.dao.mybatis.mappers.CommentMapper.CommentResult"></collection>
     </resultMap>
+    
+    <select id="consultarAll" resultMap="IntentionResult">
+        SELECT *
+        FROM intention
+    </select>
     
     
     <insert parameterType="map" id="addIntention">

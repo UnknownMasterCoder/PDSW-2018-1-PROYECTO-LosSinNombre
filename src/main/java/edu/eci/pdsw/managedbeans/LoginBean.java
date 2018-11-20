@@ -3,9 +3,12 @@ package edu.eci.pdsw.managedbeans;
 import edu.eci.pdsw.entities.User;
 import edu.eci.pdsw.services.InitiativeBankException;
 import edu.eci.pdsw.services.InitiativeBankServices;
+import java.io.IOException;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 
@@ -24,13 +27,20 @@ public class LoginBean extends BasePageBean{
         password = null;
     }
     
-    public void verificar(){
+    public void autenticacion() throws IOException, InitiativeBankException {
+        User usuarioTemp = new User();
         try {
-            User temp = initiativeBankServices.consultarUsuario(mail);
-        } catch (Exception e) {
-            
-        }
-        
+            System.out.println("hola estoy dentro");
+            usuarioTemp = initiativeBankServices.consultarUsuario(mail);
+            System.out.println(usuarioTemp.toString());
+            if (password.equals(usuarioTemp.getContrasenia())) {
+                FacesContext.getCurrentInstance().getExternalContext().redirect("menuPrincipal.xhtml/"+usuarioTemp.getFull_name());
+            } else {
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Contraseña incorrecto.", "Ingrese la contraseña de nuevo."));
+            }
+        }catch (InitiativeBankException ex) {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, ex.getMessage(), "Cree un usuario."));
+        }    
     }
     
     public void print(){
