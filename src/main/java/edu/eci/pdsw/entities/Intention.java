@@ -7,64 +7,43 @@ import java.util.Date;
 public class Intention implements Serializable{
     
     private int id;
-    private int estado;
-    private String nombre;
+    private String estado;
+    private String titulo;
     private String descripcion;
     private Date fechaCreacion;
     private String tags;
     private User autor;
     private String palabrasClave;
     private ArrayList<Comment> comments;
-    private String area;
-           
-    //TO-DO, Correct variables and methods    
+    private String area; 
 
-    public Intention(int id, int estado, String nombre, String descripcion, Date fechaCreacion,ArrayList<Comment> comentarios,String palabrasClave, User autor,String area) {
+    public Intention(int id, String estado, String titulo, String descripcion, Date fechaCreacion,ArrayList<Comment> comentarios,String palabrasClave, User autor,String area) {
         this.id = id;
         this.estado = estado;
-        this.nombre = nombre;
+        this.titulo = titulo;
         this.descripcion = descripcion;
         this.fechaCreacion = fechaCreacion;
         this.palabrasClave = palabrasClave;
         this.comments = comentarios;
         this.autor = autor;
         this.area = area;        
-    }
-
-    public Intention(int id2, int estado2, String nombre2, String descripcion2, Date now,
-			String palabrasClave2, User usuario,String area) {
-    	this.id = id2;
-        this.estado = estado2;
-        this.nombre = nombre2;
-        this.descripcion = descripcion2;
-        this.fechaCreacion = now;
-        this.palabrasClave = palabrasClave2;
-        this.autor = usuario;
-        this.area = area;
-	}
-
-	public int getId() {
-        return id;
-    }
+    }    
 
     public Intention() {
+        comments = new ArrayList<Comment>();
     }
     
-
     public void setId(int id) {
         this.id = id;
     }
 
-
-
-    public int getEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(int estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
-    }
-    
+    }     
 
     public User getUsuario_documento() {
         return autor;
@@ -73,15 +52,14 @@ public class Intention implements Serializable{
     public void setUsuario_documento(User autor) {
         this.autor = autor;
     }
-    
-    public String getNombre() {
-        return nombre;
+
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }    
     
     public String getDescripcion() {
         return descripcion;
@@ -124,10 +102,9 @@ public class Intention implements Serializable{
         this.area = area;
     }
 
-
     @Override
     public String toString() {
-        return "Item{" + " id= " + id + ", estado=" + estado + ", nombre=" + nombre + ",descripcion=" + descripcion + ", fechaCreacion=" + fechaCreacion + ", palabrasclave=" + palabrasClave+", autor="+autor+",area="+area+"}";
+        return "Item{" + " id= " + id + ", estado=" + estado + ", titulo=" + titulo + ",descripcion=" + descripcion + ", fechaCreacion=" + fechaCreacion + ", palabrasclave=" + palabrasClave+", autor="+autor+",area="+area+"}";
     }
 
 }

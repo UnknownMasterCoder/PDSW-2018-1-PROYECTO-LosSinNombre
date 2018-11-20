@@ -4,24 +4,25 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
-    <head>
-        <title>Intenciones</title>
+    <h:head>
+        <title>Intenciónes</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <h1>Lista de intenciones</h1>
-        <p:dataTable id="bad_table" var="intention" value="#{intentionBean.consult}">	
-                <p:column headerText="login">
-                    <h:outputText value="#{intention.nombre}" />
-		</p:column>
-                
-		<p:column headerText="name">
-                    <h:outputText value="#{intention.descripcion}" />
-		</p:column>
-       
-                <p:column headerText="content">
-                    <h:outputText value="#{intention.fechaCreacion}" />
-		</p:column>
+    </h:head>
+    <h:body>
+        <div style="margin-top: 15px"></div>
+        <center><h1>Lista de intenciónes</h1></center>
+        <p:dataTable id="intention_table" var="intention" value="#{intentionBean.consultAll}">	
+            <p:column headerText="titulo">
+                <h:outputText value="#{intention.titulo}" />
+            </p:column>
+
+            <p:column headerText="descripcion">
+                <h:outputText value="#{intention.descripcion}" />
+            </p:column>
+
+            <p:column headerText="fecha">
+                <h:outputText value="#{intention.fechaCreacion}" />
+            </p:column>
 	</p:dataTable>
-    </body>
+    </h:body>
 </html>
