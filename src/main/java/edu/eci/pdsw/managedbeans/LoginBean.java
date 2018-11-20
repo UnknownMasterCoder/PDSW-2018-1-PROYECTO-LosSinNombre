@@ -34,7 +34,7 @@ public class LoginBean extends BasePageBean{
             usuarioTemp = initiativeBankServices.consultarUsuario(mail);
             System.out.println(usuarioTemp.toString());
             if (password.equals(usuarioTemp.getContrasenia())) {
-                FacesContext.getCurrentInstance().getExternalContext().redirect("menuPrincipal.xhtml/"+usuarioTemp.getFull_name());
+                FacesContext.getCurrentInstance().getExternalContext().redirect("menuPrincipal.xhtml");
             } else {
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Contraseña incorrecto.", "Ingrese la contraseña de nuevo."));
             }
